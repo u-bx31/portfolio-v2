@@ -34,6 +34,8 @@
 	--color-secondary-foreground: var(--secondary-foreground);
 	--color-secondary: var(--secondary);
 	--color-primary-foreground: var(--primary-foreground);
+	--text: var(--text);
+	--text-header: var(--text-header);
 	--color-primary: var(--primary);
 	--color-popover-foreground: var(--popover-foreground);
 	--color-popover: var(--popover);
