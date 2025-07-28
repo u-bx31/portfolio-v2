@@ -93,7 +93,7 @@ export const NavBody = ({
 	return (
 		<motion.div
 			animate={{
-				backdropFilter: visible ? "blur(10px)" : "none",
+				backdropFilter: visible ? "blur(5px)" : "none",
 				boxShadow: visible
 					? "0 0 24px rgba(34, 42, 53, 0.06), 0 1px 1px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(34, 42, 53, 0.04), 0 0 4px rgba(34, 42, 53, 0.08), 0 16px 68px rgba(47, 48, 55, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1) inset"
 					: "none",
@@ -110,7 +110,7 @@ export const NavBody = ({
 			}}
 			className={cn(
 				"relative z-[60] mx-auto hidden w-full max-w-7xl flex-row items-center justify-between self-start rounded-2xl bg-transparent px-4 py-2 lg:flex dark:bg-transparent",
-				visible && "bg-white/80 dark:bg-neutral-950/80",
+				visible && "bg-white/60 dark:bg-neutral-950/80",
 				className
 			)}>
 			{children}
@@ -136,13 +136,13 @@ export const NavItems = ({
 				<a
 					onMouseEnter={() => setHovered(idx)}
 					onClick={onItemClick}
-					className="relative px-4 py-2 text-text dark:text-neutral-300"
+					className="relative px-4 py-2 text-text "
 					key={`link-${idx}`}
 					href={item.link}>
 					{hovered === idx && (
 						<motion.div
 							layoutId="hovered"
-							className="absolute inset-0 h-full w-full rounded-full bg-primary/40 dark:bg-neutral-800"
+							className="absolute inset-0 h-full w-full rounded-full bg-accent/30"
 						/>
 					)}
 					<span className="relative z-20">{item.name}</span>
@@ -291,7 +291,7 @@ export const NavbarButton = ({
 		<Tag
 			href={href || undefined}
 			className={
-				"bg-accent px-5 py-2 rounded-full text-lg font-normal relative cursor-pointer hover:-translate-y-0.5 transition duration-200 inline-block text-center shadow-sm " +
+				"bg-accent px-4 py-2 rounded-full text-lg font-normal relative cursor-pointer hover:-translate-y-0.5 transition duration-200 inline-block text-center shadow-sm " +
 				className
 			}
 			{...props}>

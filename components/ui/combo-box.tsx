@@ -28,7 +28,7 @@ export function Combobox({ list }: comboBox) {
 					variant="outline"
 					role="combobox"
 					aria-expanded={open}
-					className="w-fit justify-between !p-2">
+					className="w-fit justify-between !p-2 cursor-pointer">
 					{value
 						? list.find((framework) => framework.value === value)
 								?.label
