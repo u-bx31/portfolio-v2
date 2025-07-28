@@ -10,8 +10,10 @@ import {
 	MobileNavToggle,
 	MobileNavMenu,
 } from "@/components/ui/resizable-navbar";
-import { Moon } from "lucide-react";
+import { ChevronDown, Moon } from "lucide-react";
 import { useState } from "react";
+import { Combobox } from "../ui/combo-box";
+import { Button } from "../ui/button";
 
 export function NavbarDemo() {
 	const navItems = [
@@ -29,6 +31,20 @@ export function NavbarDemo() {
 		},
 	];
 
+	const list = [
+		{
+			value: "en",
+			label: "En",
+			default: true,
+		},
+		{
+			value: "fr",
+			label: "Fr",
+			default: true,
+		},
+		
+	];
+
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
 	return (
@@ -37,9 +53,12 @@ export function NavbarDemo() {
 			<NavBody>
 				<NavbarLogo />
 				<NavItems items={navItems} />
-				<div className="flex items-center  gap-4">
+				<div className="flex items-center z-4 gap-4">
 					<NavbarButton>Resume</NavbarButton>
-					<NavbarButton className="!px-3"><Moon className="w-6 h-6" /></NavbarButton>
+					<NavbarButton className="!px-3">
+						<Moon className="w-6 h-6" />
+					</NavbarButton>
+					<Combobox list={list} />
 				</div>
 			</NavBody>
 
