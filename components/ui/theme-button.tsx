@@ -1,44 +1,47 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { MoonIcon, SunIcon } from "lucide-react";
-
-import { Toggle } from "@/components/ui/toggle";
+import { Circle, MoonIcon, SunIcon } from "lucide-react";
 import { useTheme } from "next-themes";
+import { Button } from "./button";
 
 export default function ThemeButton() {
 	const { setTheme, resolvedTheme } = useTheme();
-	const [dark, setDark] = useState<boolean>();
+	const [mounted, setMounted] = useState<boolean>(false);
+
 	useEffect(() => {
-		setDark(true);
+		setMounted(true);
 	}, []);
 
-	if (!dark) {
-		return null; // Avoids hydration mismatch on SSR
-	}
 	return (
 		<div>
-			<Toggle
-				className="group data-[state=on]:hover:bg-white/50  size-9 bg-transparent hover:bg-white/50 cursor-pointer rounded-l-lg rounded-r-sm "
-				pressed={resolvedTheme === "dark"}
-				onPressedChange={() =>
+			<Button
+				className="group  size-9 bg-transparent hover:bg-white/50 cursor-pointer rounded-l-lg rounded-r-sm "
+				onClick={() =>
 					setTheme(resolvedTheme === "dark" ? "light" : "dark")
-				}
-				aria-label={`Switch to ${
-					resolvedTheme === "dark" ? "dark" : "Light"
-				} mode`}>
-				{/* Note: After dark mode implementation, rely on dark: prefix rather than group-data-[state=on]: */}
-				<MoonIcon
-					size={16}
-					className="shrink-0 stroke-gray-900   scale-0 opacity-0 transition-all group-data-[state=on]:scale-100 group-data-[state=on]:opacity-100"
-					aria-hidden="true"
-				/>
-				<SunIcon
-					size={16}
-					className="absolute stroke-gray-900  shrink-0 scale-100 opacity-100 transition-all group-data-[state=on]:scale-0 group-data-[state=on]:opacity-0"
-					aria-hidden="true"
-				/>
-			</Toggle>
+				}>
+				{/* Show SunIcon when dark, MoonIcon when light */}
+				{mounted ? (
+					resolvedTheme === "dark" ? (
+						<SunIcon
+							size={16}
+							className="stroke-gray-900 shrink-0 transition-all animate-out duration-600"
+							aria-hidden="true"
+						/>
+					) : (
+						<MoonIcon
+							size={16}
+							className="stroke-gray-900 shrink-0 transition-all animate-out duration-600"
+							aria-hidden="true"
+						/>
+					)
+				) : (
+					<Circle
+						size={10}
+						className="stroke-gray-900 shrink-0 transition-all duration-600"
+					/>
+				)}
+			</Button>
 		</div>
 	);
 }

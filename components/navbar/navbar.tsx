@@ -26,6 +26,10 @@ export function NavbarDemo() {
 			link: "#about",
 		},
 		{
+			name: "Projects",
+			link: "/project",
+		},
+		{
 			name: "Contact",
 			link: "#contact",
 		},
