@@ -13,9 +13,10 @@ import {
 
 interface comboBox {
 	list: { value: string; label: string; default?: boolean }[];
+	className? : string;
 }
 
-export function Combobox({ list }: comboBox) {
+export function Combobox({ list,className,...props }: comboBox) {
 	const [open, setOpen] = React.useState(false);
 	const [value, setValue] = React.useState(
 		list.find((item) => item.default)?.value || ""
@@ -25,10 +26,9 @@ export function Combobox({ list }: comboBox) {
 		<Popover open={open} onOpenChange={setOpen}>
 			<PopoverTrigger asChild>
 				<Button
-					variant="outline"
 					role="combobox"
 					aria-expanded={open}
-					className="w-fit justify-between !p-2 cursor-pointer">
+					className={"w-fit justify-between !p-2 cursor-pointer " + className}>
 					{value
 						? list.find((framework) => framework.value === value)
 								?.label

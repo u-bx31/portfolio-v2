@@ -13,6 +13,7 @@ import {
 import { Moon } from "lucide-react";
 import { useState } from "react";
 import { Combobox } from "../ui/combo-box";
+import ThemeButton from "../ui/theme-button";
 
 export function NavbarDemo() {
 	const navItems = [
@@ -27,6 +28,10 @@ export function NavbarDemo() {
 		{
 			name: "Contact",
 			link: "#contact",
+		},
+		{
+			name: "Resume",
+			link: "#Resume",
 		},
 	];
 
@@ -48,20 +53,16 @@ export function NavbarDemo() {
 	return (
 		<Navbar>
 			{/* Desktop Navigation */}
-			
+
 			<NavBody>
 				<NavbarLogo />
 				<NavItems items={navItems} />
-				<div className="flex items-center z-4 gap-4">
-					<div className="w-full max-w-fit mx-auto  rounded-2xl border-2 border-transparent animate-border">
-						<button className="relative text-center z-10 bg-accent p-3 rounded-2xl">
-							Resume
-						</button>
-					</div>
-					<NavbarButton className="!px-2">
-						<Moon className="w-6 h-6" />
-					</NavbarButton>
-					<Combobox list={list} />
+				<div className="flex items-center z-4 gap-[1px] bg-accent rounded-lg ">
+					<ThemeButton />
+					<Combobox
+						list={list}
+						className="bg-accent text-gray-900  hover:bg-white/50 shadow-none rounded-l-sm rounded-r-lg "
+					/>
 				</div>
 			</NavBody>
 
@@ -69,10 +70,17 @@ export function NavbarDemo() {
 			<MobileNav>
 				<MobileNavHeader>
 					<NavbarLogo />
-					<MobileNavToggle
-						isOpen={isMobileMenuOpen}
-						onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-					/>
+					<div className="flex items-center z-4 gap-[1px] bg-accent rounded-lg ">
+						<ThemeButton />
+						<Combobox
+							list={list}
+							className="bg-accent hover:bg-white/50 shadow-none rounded-l-sm rounded-r-lg "
+						/>
+						<MobileNavToggle
+							isOpen={isMobileMenuOpen}
+							onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+						/>
+					</div>
 				</MobileNavHeader>
 
 				<MobileNavMenu
@@ -87,13 +95,6 @@ export function NavbarDemo() {
 							<span className="block">{item.name}</span>
 						</a>
 					))}
-					<div className="flex w-full flex-col gap-4">
-						<NavbarButton
-							onClick={() => setIsMobileMenuOpen(false)}
-							className="w-full">
-							Resume
-						</NavbarButton>
-					</div>
 				</MobileNavMenu>
 			</MobileNav>
 		</Navbar>
