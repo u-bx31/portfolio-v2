@@ -30,9 +30,9 @@
 				from var(--border-angle),
 				rgba(223, 6, 6, 0) 00%,
 				#00d9ff00 86%,
-				#ffd771  90%,
-				#ffc737  94%,
-				#ffcd71  94%
+				#ffd771 90%,
+				#ffc737 94%,
+				#ffcd71 94%
 			)
 			border-box;
 }
@@ -152,11 +152,24 @@
 	--sidebar-border: oklch(1 0 0 / 10%);
 	--sidebar-ring: oklch(0.556 0 0);
 }
+@theme {
+	--animate-fade-in-scale: fade-in-scale 0.2s ease-in-out;
+	@keyframes fade-in-scale {
+		0% {
+			opacity: 0;
+			transform: scale(0.95);
+		}
+		100% {
+			opacity: 1;
+			transform: scale(1);
+		}
+	}
+}
 @layer base {
 	* {
 		@apply border-border outline-ring/50 transition-colors duration-100;
 	}
 	body {
-		@apply bg-background text-foreground ;
+		@apply bg-background text-foreground;
 	}
 }

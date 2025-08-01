@@ -19,11 +19,11 @@ export function NavbarDemo() {
 	const navItems = [
 		{
 			name: "Home",
-			link: "#home",
+			link: "/",
 		},
 		{
 			name: "About",
-			link: "#about",
+			link: "/about",
 		},
 		{
 			name: "Projects",
@@ -31,7 +31,7 @@ export function NavbarDemo() {
 		},
 		{
 			name: "Contact",
-			link: "#contact",
+			link: "/contact",
 		},
 		{
 			name: "Resume",

@@ -25,20 +25,19 @@ export default function ThemeButton() {
 					resolvedTheme === "dark" ? (
 						<SunIcon
 							size={16}
-							className="stroke-gray-900 shrink-0 transition-all animate-out duration-600"
+							className="stroke-gray-900 shrink-0 transition-all animate-fade-in-scale "
 							aria-hidden="true"
 						/>
 					) : (
 						<MoonIcon
 							size={16}
-							className="stroke-gray-900 shrink-0 transition-all animate-out duration-600"
+							className="stroke-gray-900 shrink-0 transition-all animate-fade-in-scale "
 							aria-hidden="true"
 						/>
 					)
 				) : (
 					<Circle
-						size={10}
-						className="stroke-gray-900 shrink-0 transition-all duration-600"
+						className="!w-1 !h-1 stroke-gray-900 shrink-0 transition-all animate-fade-in-scale "
 					/>
 				)}
 			</Button>
