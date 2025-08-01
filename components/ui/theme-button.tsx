@@ -20,7 +20,7 @@ export default function ThemeButton() {
 				onClick={() =>
 					setTheme(resolvedTheme === "dark" ? "light" : "dark")
 				}>
-				{/* Show SunIcon when dark, MoonIcon when light */}
+				{/* Show SunIcon when dark, MoonIcon when light*/}
 				{mounted ? (
 					resolvedTheme === "dark" ? (
 						<SunIcon
