@@ -266,7 +266,7 @@ export const NavbarLogo = () => {
 			className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black">
 			<img
 				className="w-16 h-11  lg:w-[105px]"
-				src="logo.svg"
+				src="/logo.svg"
 				alt="logo"
 			/>
 		</Link>

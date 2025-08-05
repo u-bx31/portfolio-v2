@@ -14,6 +14,8 @@ import { Moon } from "lucide-react";
 import { useState } from "react";
 import { Combobox } from "../ui/combo-box";
 import ThemeButton from "../ui/theme-button";
+import { routing } from "@/i18n/routing";
+import { useLocale } from "next-intl";
 
 export function NavbarDemo() {
 	const navItems = [
@@ -39,21 +41,9 @@ export function NavbarDemo() {
 		},
 	];
 
-	const list = [
-		{
-			value: "en",
-			label: "En",
-			default: true,
-		},
-		{
-			value: "fr",
-			label: "Fr",
-			default: true,
-		},
-	];
-
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
+	const locale = useLocale();
+	const LangList: string[] = [...routing.locales];
 	return (
 		<Navbar>
 			{/* Desktop Navigation */}
@@ -64,7 +54,8 @@ export function NavbarDemo() {
 				<div className="flex items-center z-4 gap-[1px] bg-accent rounded-lg ">
 					<ThemeButton />
 					<Combobox
-						list={list}
+						defaultValue={locale}
+						list={LangList}
 						className="bg-accent text-gray-900  hover:bg-white/50 shadow-none rounded-l-sm rounded-r-lg "
 					/>
 				</div>
@@ -77,7 +68,7 @@ export function NavbarDemo() {
 					<div className="flex items-center z-4 gap-[1px] bg-accent rounded-lg ">
 						<ThemeButton />
 						<Combobox
-							list={list}
+							list={LangList}
 							className="bg-accent hover:bg-white/50 shadow-none rounded-l-sm rounded-r-lg "
 						/>
 						<MobileNavToggle
