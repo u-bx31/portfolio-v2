@@ -1,0 +1,24 @@
+{
+	"item": [
+		{
+			"name": "Home",
+			"link": "/"
+		},
+		{
+			"name": "About",
+			"link": "/about"
+		},
+		{
+			"name": "Project",
+			"link": "/project"
+		},
+		{
+			"name": "Contact",
+			"link": "/contact"
+		},
+		{
+			"name": "Resume",
+			"link": "__RESUME_LINK__"
+		}
+	]
+}

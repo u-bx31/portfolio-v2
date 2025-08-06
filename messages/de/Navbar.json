@@ -1,0 +1,24 @@
+{
+	"item": [
+		{
+			"name": "Startseite",
+			"link": "/"
+		},
+		{
+			"name": "Über mich",
+			"link": "/about"
+		},
+		{
+			"name": "Projekte",
+			"link": "/project"
+		},
+		{
+			"name": "Kontakt",
+			"link": "/contact"
+		},
+		{
+			"name": "Lebenslauf",
+			"link": "__RESUME_LINK__"
+		}
+	]
+}

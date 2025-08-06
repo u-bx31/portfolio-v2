@@ -15,31 +15,19 @@ import { useState } from "react";
 import { Combobox } from "../ui/combo-box";
 import ThemeButton from "../ui/theme-button";
 import { routing } from "@/i18n/routing";
-import { useLocale } from "next-intl";
+import { useLocale, useMessages, useTranslations } from "next-intl";
 
 export function NavbarDemo() {
-	const navItems = [
-		{
-			name: "Home",
-			link: "/",
-		},
-		{
-			name: "About",
-			link: "/about",
-		},
-		{
-			name: "Projects",
-			link: "/project",
-		},
-		{
-			name: "Contact",
-			link: "/contact",
-		},
-		{
-			name: "Resume",
-			link: "#Resume",
-		},
-	];
+	const t = useTranslations("Navbar"); // Assuming this JSON is under `navbar.json`
+	const items = t.raw("item"); // Get raw array (not translated string)
+
+	const resolvedItems = items.map((item: any) => ({
+		...item,
+		path:
+			item.path === "__RESUME_LINK__"
+				? process.env.NEXT_PUBLIC_RESUME_LINK
+				: item.path,
+	}));
 
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 	const locale = useLocale();
@@ -50,7 +38,7 @@ export function NavbarDemo() {
 
 			<NavBody>
 				<NavbarLogo />
-				<NavItems items={navItems} />
+				<NavItems items={resolvedItems} />
 				<div className="flex items-center z-4 gap-[1px] bg-accent rounded-lg ">
 					<ThemeButton />
 					<Combobox
@@ -81,15 +69,17 @@ export function NavbarDemo() {
 				<MobileNavMenu
 					isOpen={isMobileMenuOpen}
 					onClose={() => setIsMobileMenuOpen(false)}>
-					{navItems.map((item, idx) => (
-						<a
-							key={`mobile-link-${idx}`}
-							href={item.link}
-							onClick={() => setIsMobileMenuOpen(false)}
-							className="relative text-neutral-600 dark:text-neutral-300">
-							<span className="block">{item.name}</span>
-						</a>
-					))}
+					{resolvedItems.map(
+						(item: { name: string; link: "string" }, idx: number) => (
+							<a
+								key={`mobile-link-${idx}`}
+								href={item.link}
+								onClick={() => setIsMobileMenuOpen(false)}
+								className="relative text-neutral-600 dark:text-neutral-300">
+								<span className="block">{item.name}</span>
+							</a>
+						)
+					)}
 				</MobileNavMenu>
 			</MobileNav>
 		</Navbar>

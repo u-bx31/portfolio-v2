@@ -1,0 +1,24 @@
+{
+	"item": [
+		{
+			"name": "Accueil",
+			"link": "/"
+		},
+		{
+			"name": "À propos",
+			"link": "/about"
+		},
+		{
+			"name": "Projet",
+			"link": "/project"
+		},
+		{
+			"name": "Contact",
+			"link": "/contact"
+		},
+		{
+			"name": "CV",
+			"link": "__RESUME_LINK__"
+		}
+	]
+}
