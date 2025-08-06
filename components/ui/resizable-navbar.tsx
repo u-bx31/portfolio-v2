@@ -71,7 +71,7 @@ export const Navbar = ({ children, className }: NavbarProps) => {
 			ref={ref}
 			// IMPORTANT: Change this to class of `fixed` if you want the navbar to be fixed
 			className={cn(
-				"sticky inset-x-0 top-10 z-40 w-full",
+				"sticky inset-x-0 top-5 md:top-10 z-40 w-full",
 				className
 			)}>
 			{React.Children.map(children, (child) =>
@@ -177,7 +177,7 @@ export const MobileNav = ({
 				damping: 50,
 			}}
 			className={cn(
-				"relative z-50 mx-auto flex !rounded-lg w-full max-w-[calc(100vw-2rem)] flex-col items-center justify-between bg-transparent px-0 py-2 lg:hidden",
+				"relative z-50 mx-auto flex !rounded-lg w-full max-w-[calc(100vw-1rem)] flex-col items-center justify-between bg-transparent px-0 py-2 lg:hidden",
 				visible && "bg-white/80 dark:bg-neutral-950/80",
 				className
 			)}>
@@ -265,7 +265,7 @@ export const NavbarLogo = () => {
 			href="/"
 			className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black">
 			<img
-				className="w-16 h-11  lg:w-[105px]"
+				className="w-16 h-11 min-w-16 min-h-11 lg:w-[105px]"
 				src="/logo.svg"
 				alt="logo"
 			/>

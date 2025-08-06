@@ -3,39 +3,6 @@
 
 @custom-variant dark (&:is(.dark *));
 
-@property --border-angle {
-	inherits: false;
-	initial-value: 0deg;
-	syntax: "<angle>";
-}
-
-@keyframes border {
-	to {
-		--border-angle: 360deg;
-	}
-}
-
-.animate-border {
-	animation: border 4s linear infinite;
-}
-.bg-eff {
-	background: linear-gradient(
-				45deg,
-				#f3050500,
-				#1e293b00 0%,
-				#a604f700
-			)
-			padding-box,
-		conic-gradient(
-				from var(--border-angle),
-				rgba(223, 6, 6, 0) 00%,
-				#00d9ff00 86%,
-				#ffd771 90%,
-				#ffc737 94%,
-				#ffcd71 94%
-			)
-			border-box;
-}
 @theme inline {
 	--color-background: var(--background);
 	--color-foreground: var(--foreground);
@@ -165,11 +132,55 @@
 		}
 	}
 }
+
 @layer base {
 	* {
 		@apply border-border outline-ring/50 transition-colors duration-100;
 	}
 	body {
-		@apply bg-background text-foreground;
+		@apply bg-background text-foreground !min-w-[280px];
 	}
+}
+
+@property --border-angle {
+	inherits: false;
+	initial-value: 0deg;
+	syntax: "<angle>";
+}
+
+@keyframes border {
+	to {
+		--border-angle: 360deg;
+	}
+}
+
+.animate-border {
+	animation: border 4s linear infinite;
+}
+.bg-eff {
+	background: linear-gradient(
+				45deg,
+				#f3050500,
+				#1e293b00 0%,
+				#a604f700
+			)
+			padding-box,
+		conic-gradient(
+				from var(--border-angle),
+				rgba(223, 6, 6, 0) 00%,
+				#00d9ff00 86%,
+				#ffd771 90%,
+				#ffc737 94%,
+				#ffcd71 94%
+			)
+			border-box;
+}
+.no-visible-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+}
+ 
+.no-visible-scrollbar::-webkit-scrollbar {
+  display: none;
 }

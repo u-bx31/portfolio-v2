@@ -34,7 +34,7 @@ export default async function RootLayout({
 				<ThemeProvider>
 					<NextIntlClientProvider>
 						<NavbarDemo />
-						{children}
+						<div className="mt-5 md:mt-20 ">{children}</div>
 					</NextIntlClientProvider>
 				</ThemeProvider>
 			</body>
