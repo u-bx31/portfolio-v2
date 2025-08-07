@@ -53,7 +53,7 @@ export function NavbarDemo() {
 			<MobileNav>
 				<MobileNavHeader>
 					<NavbarLogo />
-					<div className="flex items-center z-4 gap-[1px] bg-accent rounded-lg ">
+					<div className="flex items-center z-4 gap-[1px] bg-accent rounded-lg mx-2">
 						<ThemeButton />
 						<Combobox
 							list={LangList}
