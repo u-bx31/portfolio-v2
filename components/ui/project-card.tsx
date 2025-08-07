@@ -72,11 +72,12 @@ export default function ProjectCard({
 							</MorphingDialogSubtitle>
 						</div>
 					</div>
+
 					{/* Card Image */}
 					<MorphingDialogImage
 						src={image}
 						alt={title}
-						className="w-full translate-x-12 h-50 object-cover transition-transform duration-300 ease-in-out transform group-hover:scale-105"
+						className="w-full translate-x-12 h-48 min-[416px]:h-60 sm:h-60 md:h-52 object-cover transition-transform duration-300 ease-in-out transform group-hover:scale-105"
 					/>
 
 					{/* Optional Status Badge */}
@@ -89,58 +90,70 @@ export default function ProjectCard({
 
 				{/* === Dialog Container === */}
 				<MorphingDialogContainer>
-					<MorphingDialogContent className="pointer-events-auto p-6 flex h-[calc(100vh-10rem)] w-full flex-col overflow-auto  no-visible-scrollbar rounded-3xl border border-white/10 bg-[#1f3651] sm:w-[70%]">
-						<div className="flex flex-col md:flex-row gap-4 items-center ">
+					<MorphingDialogContent className="pointer-events-auto p-6 flex h-[calc(100vh-10rem)] w-full flex-col overflow-auto  no-visible-scrollbar rounded-3xl border border-white/10 bg-[#1f3651] lg:w-[90%] xl:w-[70%]">
+						<div className="flex flex-col lg:flex-row gap-4 items-center ">
 							<MorphingDialogImage
 								src={image}
 								alt={title}
-								className="w-full h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[50vh] object-contain"
+								className="w-full h-[30vh] sm:h-[50vh] md:h-[60vh] lg:h-[50vh] object-contain"
 							/>
-							<div className="flex flex-col gap-4 w-full ">
-								<MorphingDialogTitle className="text-3xl font-bold text-white">
-									{title}
-								</MorphingDialogTitle>
-								<MorphingDialogSubtitle className="text-white/70">
-									{subtitle}
-								</MorphingDialogSubtitle>
-
-                {/* links */}
-								<div className="flex items-center gap-4 mb-3">
-									<a
-										href={"#"}
-										target="_blank"
-										rel="noopener noreferrer"
-										className="flex items-center gap-1 text-white/80 hover:text-white transition">
-										<GithubIcon className="w-4 h-4" />
-										<span className="text-sm">View on GitHub</span>
-									</a>
-
-									<a
-										href={"#"}
-										target="_blank"
-										rel="noopener noreferrer"
-										className="flex items-center gap-1 text-white/80 hover:text-white transition">
-										<LinkIcon className="w-4 h-4" />
-										<span className="text-sm">Live Demo</span>
-									</a>
+							<div className="flex flex-col gap-3 md:gap-5 w-full ">
+								<div className="flex flex-col gap-2">
+									<MorphingDialogTitle className="text-3xl lg:text-5xl font-bold text-white">
+										{title}
+									</MorphingDialogTitle>
+									<MorphingDialogSubtitle className="text-white/90 text-lg">
+										{subtitle}
+									</MorphingDialogSubtitle>
 								</div>
 
 								{/* Tech Stack */}
-								<div className="flex flex-wrap gap-2 mb-4">
-									{["React", "Next.js", "Tailwind CSS"].map(
-										(tech) => (
-											<span
-												key={tech}
-												className="bg-white/10 text-white/80 text-xs px-2 py-1 rounded-md">
-												{tech}
-											</span>
-										)
-									)}
+								<div className="flex flex-wrap gap-2 mb-3">
+									{[
+										"Next.js 14",
+										"Tailwind CSS",
+										"TypeScript",
+										"Mongodb",
+										"UploadThing",
+										"Clerk",
+										"Shadcn/ui",
+									].map((tech) => (
+										<span
+											key={tech}
+											className="bg-white/10 text-white/80 text-xs px-2 py-1 rounded-md">
+											{tech}
+										</span>
+									))}
+								</div>
+
+								{/* links */}
+								<div className="flex items-center gap-4 ">
+									<a
+										href={"#"}
+										target="_blank"
+										rel="noopener noreferrer"
+										className="flex items-center gap-1 text-white/80 hover:text-white transition">
+										<GithubIcon className="w-4 h-4 md:w-5 md:h-5" />
+										<span className="text-sm md:text-base">
+											View on GitHub
+										</span>
+									</a>
+
+									<a
+										href={"#"}
+										target="_blank"
+										rel="noopener noreferrer"
+										className="flex items-center gap-1 text-white/80 hover:text-white transition">
+										<LinkIcon className="w-4 h-4 md:w-5 md:h-5" />
+										<span className="text-sm md:text-base">
+											Live Demo
+										</span>
+									</a>
 								</div>
 							</div>
 						</div>
 
-						<div className="">
+						<div className="mt-8">
 							<MorphingDialogDescription
 								disableLayoutAnimation
 								variants={{

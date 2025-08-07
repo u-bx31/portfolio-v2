@@ -77,7 +77,7 @@ const Project = () => {
 					/>
 				</div>
 
-				<div className="py-10 px-4 md:px-12">
+				<div className="py-10 px-4 md:px-8 lg:px-12">
 					<div className="max-w-7xl mx-auto">
 						<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 							{projects.map((project, idx) => (
