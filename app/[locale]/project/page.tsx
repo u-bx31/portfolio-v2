@@ -36,32 +36,37 @@ const Project = () => {
 			image: "/images/img_connectCrew.png",
 			link: "https://example.com",
 			status: "In Progress",
-		},
-		// duplicate for demo purposes
-		{
-			title: "Connect Crew",
-			subtitle: "social networking app",
-			image: "/images/img_connectCrew.png",
+			bgColor: "#1f3651",
 		},
 		{
 			title: "Connect Crew",
 			subtitle: "social networking app",
 			image: "/images/img_connectCrew.png",
+			bgColor: "#1f3651",
 		},
 		{
 			title: "Connect Crew",
 			subtitle: "social networking app",
 			image: "/images/img_connectCrew.png",
+			bgColor: "#1f3651",
 		},
 		{
 			title: "Connect Crew",
 			subtitle: "social networking app",
 			image: "/images/img_connectCrew.png",
+			bgColor: "#1f3651",
 		},
 		{
 			title: "Connect Crew",
 			subtitle: "social networking app",
 			image: "/images/img_connectCrew.png",
+			bgColor: "#1f3651",
+		},
+		{
+			title: "Connect Crew",
+			subtitle: "social networking app",
+			image: "/images/img_connectCrew.png",
+			bgColor: "#1f3651",
 		},
 	];
 	return (

@@ -35,15 +35,17 @@ export default function ProjectCard({
 	image,
 	link,
 	status,
-}: {
-	title: string;
-	subtitle: string;
-	image: string;
-	link?: string;
-	status?: string;
-}) {
+	bgColor = "#1f3651", // Default background color
+}: CardProps) {
 	return (
-		<>
+		<div className="group relative w-full">
+			<a
+				href={link || "#"}
+				target="_blank"
+				rel="noopener noreferrer"
+				className="absolute top-3 right-3 z-10">
+				<ExternalLinkIcon className="w-5 h-5 text-white/60 group-hover:text-white/80 hover:text-white" />
+			</a>
 			<MorphingDialog
 				transition={{
 					type: "spring",
@@ -51,18 +53,12 @@ export default function ProjectCard({
 					duration: 0.25,
 				}}>
 				{/* === Card Trigger Styled Like ProjectCard === */}
-				<MorphingDialogTrigger className="relative group flex flex-col overflow-hidden rounded-xl bg-[#1f3651]  shadow-md hover:shadow-lg">
+				<MorphingDialogTrigger
+					className={`relative w-full flex flex-col overflow-hidden bg-[${bgColor}] rounded-xl shadow-md  hover:shadow-lg `}>
 					{/* Top-right external link icon */}
-					<a
-						href={link || "#"}
-						target="_blank"
-						rel="noopener noreferrer"
-						className="absolute top-3 right-3 z-10">
-						<ExternalLinkIcon className="w-5 h-5 text-white/70 hover:text-white" />
-					</a>
 
 					{/* Content Area */}
-					<div className="flex grow items-end justify-between p-4">
+					<div className="flex grow items-end justify-between p-4 z-2">
 						<div className="flex flex-col justify-start items-start">
 							<MorphingDialogTitle className="text-white font-semibold text-lg">
 								{title}
@@ -77,12 +73,13 @@ export default function ProjectCard({
 					<MorphingDialogImage
 						src={image}
 						alt={title}
-						className="w-full translate-x-12 h-48 min-[416px]:h-60 sm:h-60 md:h-52 object-cover transition-transform duration-300 ease-in-out transform group-hover:scale-105"
+						className="w-full translate-x-12 h-48 min-[416px]:h-60 sm:h-60 md:h-52 object-cover transition-all duration-100 ease-in-out transform group-hover:scale-105 group-hover:z-2 group-hover:drop-shadow-2xl group-hover:drop-shadow-white "
 					/>
+					<div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition duration-300 ease-in-out"></div>
 
 					{/* Optional Status Badge */}
 					{status && (
-						<span className="absolute bottom-3 left-3 bg-yellow-400 text-black text-xs font-medium px-2 py-1 rounded-full">
+						<span className="absolute z-3 bottom-3 left-3 bg-yellow-400 text-black text-xs font-medium px-2 py-1 rounded-full">
 							{status}
 						</span>
 					)}
@@ -215,6 +212,6 @@ export default function ProjectCard({
 					</MorphingDialogContent>
 				</MorphingDialogContainer>
 			</MorphingDialog>
-		</>
+		</div>
 	);
 }
