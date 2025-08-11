@@ -27,6 +27,7 @@ interface CardProps {
 	link?: string;
 	status?: string; // Optional status for project
 	bgColor?: string; // Optional background color
+	cardClassName?: string; // Optional class name for card styling
 }
 
 export default function ProjectCard({
@@ -36,9 +37,10 @@ export default function ProjectCard({
 	link,
 	status,
 	bgColor = "#1f3651", // Default background color
+	cardClassName = "",
 }: CardProps) {
 	return (
-		<div className="group relative w-full">
+		<div className={`group relative ${cardClassName}`}>
 			<a
 				href={link || "#"}
 				target="_blank"
@@ -73,7 +75,7 @@ export default function ProjectCard({
 					<MorphingDialogImage
 						src={image}
 						alt={title}
-						className="w-full translate-x-12 h-48 min-[416px]:h-60 sm:h-60 md:h-52 object-cover transition-all duration-100 ease-in-out transform group-hover:scale-105 group-hover:z-2 group-hover:drop-shadow-2xl group-hover:drop-shadow-white "
+						className="w-[90%] h-auto sm:w-4/5 sm:h-64 md:w-full md:h-40 xl:h-52 translate-x-20 sm:translate-x-44 md:translate-x-9 lg:translate-x-10 xl:translate-x-12 object-cover transition-all duration-100 ease-in-out transform group-hover:scale-105 group-hover:z-2 group-hover:drop-shadow-2xl group-hover:drop-shadow-white "
 					/>
 					<div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition duration-300 ease-in-out"></div>
 
@@ -87,7 +89,7 @@ export default function ProjectCard({
 
 				{/* === Dialog Container === */}
 				<MorphingDialogContainer>
-					<MorphingDialogContent className="pointer-events-auto p-6 flex h-[calc(100vh-10rem)] w-full flex-col overflow-auto  no-visible-scrollbar rounded-3xl border border-white/10 bg-[#1f3651] lg:w-[90%] xl:w-[70%]">
+					<MorphingDialogContent className="pointer-events-auto p-6 flex h-[calc(100vh-9rem)] lg:h-[calc(100vh-5rem)] w-full flex-col overflow-auto  no-visible-scrollbar rounded-3xl border border-white/10 bg-[#1f3651] lg:w-[90%] xl:w-[70%]">
 						<div className="flex flex-col lg:flex-row gap-4 items-center ">
 							<MorphingDialogImage
 								src={image}

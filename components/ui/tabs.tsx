@@ -4,34 +4,36 @@ import { useState } from "react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 
-type Tab = {
+interface Tab {
 	title: string;
 	value: string;
-	content?: string | React.ReactNode | any;
-};
+}
+
+interface ProjectType {
+	category?: string;
+}
 
 export const Tabs = ({
 	tabs: propTabs,
 	containerClassName,
 	activeTabClassName,
 	tabClassName,
-	contentClassName,
+	activeTab,
+	setActiveTab = () => "all",
 }: {
 	tabs: Tab[];
 	containerClassName?: string;
 	activeTabClassName?: string;
 	tabClassName?: string;
-	contentClassName?: string;
+	activeTab?: string;
+	setActiveTab?: React.Dispatch<React.SetStateAction<string>>;
 }) => {
-	const [active, setActive] = useState<Tab>(propTabs[0]);
-	const [tabs, setTabs] = useState<Tab[]>(propTabs);
 
 	const moveSelectedTabToTop = (idx: number) => {
 		const newTabs = [...propTabs];
 		const selectedTab = newTabs.splice(idx, 1);
 		newTabs.unshift(selectedTab[0]);
-		setTabs(newTabs);
-		setActive(newTabs[0]);
+		setActiveTab(newTabs[0].value);
 	};
 
 	const [hovering, setHovering] = useState(false);
@@ -39,7 +41,7 @@ export const Tabs = ({
 	return (
 		<div
 			className={cn(
-				"flex flex-row items-center justify-start relative overflow-auto sm:overflow-visible no-visible-scrollbar w-full md:w-fit px-3 md:px-7 py-2 ",
+				"flex flex-row items-center justify-start relative overflow-auto sm:overflow-visible no-visible-scrollbar w-full sm:w-fit px-3 md:px-7 py-2 ",
 				containerClassName
 			)}>
 			{propTabs.map((tab, idx) => (
@@ -57,7 +59,7 @@ export const Tabs = ({
 					style={{
 						transformStyle: "preserve-3d",
 					}}>
-					{active.value === tab.value && (
+					{activeTab === tab.value && (
 						<motion.div
 							layoutId="clickedbutton"
 							transition={{
