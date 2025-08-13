@@ -38,8 +38,7 @@ export default function ProjectComp() {
 									visible: {
 										opacity: 1,
 										transition: {
-											staggerChildren: 0.04,
-											duration:0.02
+											staggerChildren: 0.03,
 										},
 									},
 								},
