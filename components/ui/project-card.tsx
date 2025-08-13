@@ -72,11 +72,15 @@ export default function ProjectCard({
 					</div>
 
 					{/* Card Image */}
-					<MorphingDialogImage
-						src={image}
-						alt={title}
-						className="w-[90%] h-auto sm:w-4/5 sm:h-64 md:w-full md:h-40 xl:h-52 translate-x-20 sm:translate-x-44 md:translate-x-9 lg:translate-x-10 xl:translate-x-12 object-cover transition-all duration-100 ease-in-out transform group-hover:scale-105 group-hover:z-2 group-hover:drop-shadow-2xl group-hover:drop-shadow-white "
-					/>
+					<div className="relative w-full h-36 sm:h-40 md:h-44 xl:h-52">
+						<MorphingDialogImage
+							src={image}
+							alt={title}
+							className="w-fit h-48 min-[500px]:h-56 sm:h-64 absolute -right-10 -bottom-6 sm:-right-12 sm:-bottom-7 md:-right-9 md:-bottom-13 xl:-right-14 xl:-bottom-8   object-contain transition-all duration-100 ease-in-out transform group-hover:scale-105 group-hover:z-2 group-hover:drop-shadow-2xl group-hover:drop-shadow-white "
+						/>
+					</div>
+					
+					{/* Overlay Effect */}
 					<div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition duration-300 ease-in-out"></div>
 
 					{/* Optional Status Badge */}
