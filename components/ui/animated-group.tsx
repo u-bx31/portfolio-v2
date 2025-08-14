@@ -133,7 +133,7 @@ function AnimatedGroup({
       className={className}
     >
       {React.Children.map(children, (child, index) => (
-        <MotionChild key={index} variants={itemVariants}>
+        <MotionChild className="w-full  md:w-[290px] l xl:w-[380px] 2xl:w-[410px]" key={index} variants={itemVariants}>
           {child}
         </MotionChild>
       ))}

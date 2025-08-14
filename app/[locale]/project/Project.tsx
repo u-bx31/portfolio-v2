@@ -29,42 +29,40 @@ export default function ProjectComp() {
 
 			<div className="py-10 px-4 sm:px-10">
 				<div className="max-w-7xl mx-auto ">
-					<div className="flex flex-wrap justify-center gap-6 ">
-						<AnimatedGroup
-							className="flex flex-wrap justify-center gap-6"
-							variants={{
-								container: {
-									hidden: { opacity: 0 },
-									visible: {
-										opacity: 1,
-										transition: {
-											staggerChildren: 0.03,
-										},
+					<AnimatedGroup
+						className="flex flex-wrap justify-center gap-6"
+						variants={{
+							container: {
+								hidden: { opacity: 0 },
+								visible: {
+									opacity: 1,
+									transition: {
+										staggerChildren: 0.03,
 									},
 								},
-								item: {
-									hidden: { opacity: 0, y: 30, filter: "blur(3px)" },
-									visible: {
-										opacity: 1,
-										y: 0,
-										filter: "blur(0px)",
-										transition: {
-											duration: 0.8,
-											type: "spring",
-											bounce: 0.2,
-										},
+							},
+							item: {
+								hidden: { opacity: 0, y: 30, filter: "blur(3px)" },
+								visible: {
+									opacity: 1,
+									y: 0,
+									filter: "blur(0px)",
+									transition: {
+										duration: 0.8,
+										type: "spring",
+										bounce: 0.2,
 									},
 								},
-							}}>
-							{filteredProjects.map((project, idx) => (
-								<ProjectCard
-									cardClassName="w-full  md:w-[290px] l xl:w-[380px] 2xl:w-[410px] "
-									key={idx}
-									{...project}
-								/>
-							))}
-						</AnimatedGroup>
-					</div>
+							},
+						}}>
+						{filteredProjects.map((project, idx) => (
+							<ProjectCard
+								cardClassName="w-full  md:w-[290px] l xl:w-[380px] 2xl:w-[410px] "
+								key={idx}
+								{...project}
+							/>
+						))}
+					</AnimatedGroup>
 				</div>
 			</div>
 		</div>
