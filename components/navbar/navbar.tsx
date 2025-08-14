@@ -56,6 +56,7 @@ export function NavbarDemo() {
 					<div className="flex items-center z-4 gap-[1px] bg-accent rounded-lg mx-2">
 						<ThemeButton />
 						<Combobox
+							defaultValue={locale}
 							list={LangList}
 							className="bg-accent hover:bg-white/50 shadow-none rounded-l-sm rounded-r-lg "
 						/>

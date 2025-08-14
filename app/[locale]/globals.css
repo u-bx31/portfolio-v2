@@ -94,7 +94,7 @@
 	--popover: oklch(0.205 0 0);
 	--popover-foreground: oklch(0.985 0 0);
 	--primary: #c89f37;
-	--primary-foreground: oklch(85.142% 0.0001 271.152);
+	--primary-foreground: oklch(93.705% 0.00011 271.152);
 	--secondary: #7c5e13;
 	--secondary-foreground: oklch(77.944% 0.00009 271.152);
 	--muted: oklch(0.269 0 0);
@@ -135,10 +135,10 @@
 
 @layer base {
 	* {
-		@apply border-border outline-ring/50 transition-colors duration-100;
+		@apply border-border outline-ring/50 ;
 	}
 	body {
-		@apply bg-background text-foreground !min-w-[280px];
+		@apply bg-background text-foreground !min-w-[280px] transition-colors duration-200;
 	}
 }
 

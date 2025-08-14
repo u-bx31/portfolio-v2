@@ -51,7 +51,7 @@ export function Combobox({
 						"w-fit justify-between !p-2 cursor-pointer " + className
 					}>
 					{value.charAt(0).toUpperCase() + value.slice(1) || "Lang"}
-					<ChevronDown className="opacity-50" />
+					<ChevronDown className="opacity-70" />
 				</Button>
 			</PopoverTrigger>
 			<PopoverContent className="w-fit p-0">

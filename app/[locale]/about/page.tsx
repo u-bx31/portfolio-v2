@@ -1,7 +1,7 @@
 "use client";
 import { FigmaIcon } from "lucide-react";
 import Image from "next/image";
-import profileImg from "@/public/images/profile.png";
+import { ArrowDoodles } from "@/public/svgs";
 
 export default function About() {
 	return (
@@ -9,18 +9,20 @@ export default function About() {
 			{/* Header Section */}
 			<div className="max-w-6xl w-full h-full flex flex-col lg:flex-row gap-8 items-center px-0 sm:px-10 lg:px-2">
 				{/* Profile Image */}
-				<div className="bg-[#f9d37c] relative w-full h-[280px]  lg:h-[480px] rounded-xl flex justify-center items-center overflow-hidden px-7">
-					<img
-						src="/arrow-doodles2.svg"
+				<div className="bg-gradient-to-t from-secondary via-secondary/80 to-background relative w-full h-[280px]  lg:h-[480px] rounded-xl flex justify-center items-center overflow-hidden px-7">
+					
+						<ArrowDoodles className=" absolute left-1/2 top-1/2 -translate-x-[51%] -translate-y-3/5 scale-60  md:scale-90 lg:scale-50 stroke-accent  stroke-5 fill-white" />
+					{/* <img
+						src="/svgs/arrow-doodles2.svg"
 						alt="arrow doodles"
-						className="absolute z-0 w-full h-full lg:h-full top-0 lg:-top-25 lg:scale-130  object-cover lg:object-contain"
-					/>
+						className="absolute z-0 w-full h-full lg:h-full top-0 lg:-top-25 lg:scale-130  object-cover stroke-white lg:object-contain"
+					/> */}
 					<Image
 						src="/images/profile.png"
 						alt="img_profile"
 						width={326}
 						height={572}
-						className="absolute !w-[300px] !h-[280px] lg:!w-[326px] lg:!h-[572px] z-3 -bottom-3 lg:-bottom-10  object-cover"
+						className="absolute !w-[300px] !h-[280px] lg:!w-[326px] lg:!h-[572px] z-3 -bottom-3 lg:-bottom-10  object-cover "
 					/>
 				</div>
 
