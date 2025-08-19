@@ -1,1 +1,15 @@
 export { default as ArrowDoodles} from './arrow-doodles2.svg';
+export { default as NextJsIcon} from './icon-nextjs.svg';
+export { default as AngularIcon} from './icon-angular.svg';
+export { default as CSharpIcon} from './icon-csharp.svg';
+export { default as AspIcon} from './icon-asp.svg';
+export { default as FigmaIcon} from './icon-figma.svg';
+export { default as LaravelIcon} from './icon-laravel.svg';
+export { default as MongodbIcon} from './icon-mongodb.svg';
+export { default as PostgrIcon} from './icon-postgr.svg';
+export { default as ReactjsIcon} from './icon-react.svg';
+export { default as SassIcon} from './icon-sass.svg';
+export { default as TailwindIcon} from './icon-tailwind.svg';
+export { default as TypeScriptIcon} from './icon-typescript.svg';
+export { default as BootstrapIcon} from './icon-bootstrap.svg';
+export { default as SqlIcon} from './icon-sql.svg';
