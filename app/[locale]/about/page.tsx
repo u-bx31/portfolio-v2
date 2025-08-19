@@ -2,6 +2,8 @@
 import Image from "next/image";
 import { ArrowDoodles } from "@/public/svgs";
 import { stackData } from "@/lib/stack";
+import { ExternalLinkIcon } from "lucide-react";
+import Link from "next/link";
 
 export default function About() {
 	return (
@@ -43,11 +45,9 @@ export default function About() {
 			{/* bottom Section */}
 			<div className="max-w-6xl mt-8 w-full h-full flex flex-col lg:flex-row gap-8 items-stretch px-0 sm:px-10 lg:px-2">
 				<div className="w-full flex flex-col gap-8">
-					
 					{/* Stack Section*/}
 					<div className="flex flex-row justify-between gap-8">
-						<div className="p-5 bg-secondary rounded-xl max-w-[501px]">
-							<h2 className="text-lg font-bold mb-4">Stack</h2>
+						<div className="p-9 bg-secondary rounded-xl max-w-[501px]">
 							<div className="flex flex-wrap gap-4 justify-center">
 								{stackData.map((item) => (
 									<div
@@ -61,7 +61,9 @@ export default function About() {
 								))}
 							</div>
 						</div>
-						<div className="w-[283px] p-4 bg-secondary rounded-xl"></div>
+						<div className="w-[283px] p-4 bg-secondary flex items-center justify-center rounded-xl">
+							<h2 className="text-3xl font-black mb-4">Stack</h2>
+						</div>
 					</div>
 
 					{/* Work Experience section */}
@@ -70,13 +72,13 @@ export default function About() {
 							Work Experience
 						</h3>
 						<div className="mb-4">
-							<p className="text-sm font-bold">
+							<p className="text-base font-bold">
 								Jun 2023 - Oct 2023, Tetouan
 							</p>
-							<p className="text-sm font-semibold">
+							<p className="text-base font-semibold">
 								Win Web - Internship • Full-stack Developer
 							</p>
-							<p className="text-sm mt-1">
+							<p className="text-base mt-1">
 								Built a full-stack project management app with
 								Next.js, Laravel, Sanctum auth, and responsive UI
 								using Figma and Shadcn. Optimized PostgreSQL databases
@@ -84,13 +86,13 @@ export default function About() {
 							</p>
 						</div>
 						<div>
-							<p className="text-sm font-bold">
+							<p className="text-base font-bold">
 								May 2022 - Jun 2022, Tetouan
 							</p>
-							<p className="text-sm font-semibold">
+							<p className="text-base font-semibold">
 								DiaaLand - Internship • Front-end Developer
 							</p>
-							<p className="text-sm mt-1">
+							<p className="text-base mt-1">
 								Developed responsive recruiting platforms using HTML,
 								CSS, JS, jQuery, and Bootstrap. Designed UI/UX with
 								features like live search, filtering, and form
@@ -98,11 +100,14 @@ export default function About() {
 							</p>
 						</div>
 					</div>
+				</div>
+				<Link
+					href={"/project"}
+					className="max-w-[318px] w-full relative p-20 bg-accent rounded-xl flex items-center group justify-center text-outline transition-all duration-150 ease-in-out ">
+					<ExternalLinkIcon className=" absolute top-3 right-3 z-10 w-5 h-5 text-white/60 group-hover:text-white/80 hover:text-white" />
 
-				</div>
-				<div className="max-w-[318px] w-full p-20 bg-accent rounded-xl flex items-center justify-center">
-					Projects
-				</div>
+					<h1 className="text-6xl font-bold ">Projects</h1>
+				</Link>
 			</div>
 		</div>
 	);
