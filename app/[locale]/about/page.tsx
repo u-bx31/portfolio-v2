@@ -48,21 +48,24 @@ export default function About() {
 				<div className="w-full flex flex-col gap-8">
 					{/* Stack Section*/}
 					<div className="flex flex-col md:flex-row justify-between gap-8">
-						<div className="px-6  relative order-2 md:order-1 bg-secondary rounded-xl w-full md:max-w-[501px] overflow-hidden">
-							<div className="bg-background -translate-x-6 mt-6 px-10 py-5 w-fit left-10 rounded-r-xl">
+						<div className="px-6 h-[390px] min-[450px]:h-[320px] sm:h-[360px] relative order-2 md:order-1 bg-secondary rounded-xl w-full lg:max-w-[501px] overflow-hidden">
+							<div className="bg-background -translate-x-6 translate-y-6 px-12 py-5 w-fit left-10 rounded-r-xl">
 								<h3 className="font-bold text-lg mb-4">Stack</h3>
 							</div>
-							<div className="grid grid-cols-3 min-[389px]:grid-cols-4 md:grid-cols-5 translate-x-10 md:translate-x-15 -translate-y-9 -rotate-6 px-3 gap-3 justify-stretch items-center ">
-								{stackData.map((item) => (
-									<div
-										key={item.name}
-										className="bg-[#FAF0D5] !w-full  rounded-lg p-2.5 shadow-lg">
-										<item.icon
-											className="w-9 h-9 sm:w-12 sm:h-12 mx-auto"
-											aria-label={item.name}
-										/>
-									</div>
-								))}
+							<div className="flex flex-wrap flex-1 translate-x-15 md:translate-x-20 -translate-y-6 -rotate-6 px-3 gap-3  justify-center ">
+								{stackData.map((item, i) => {
+									return (
+										<div
+											key={item.name}
+											className={`bg-[#FAF0D5] rounded-xl p-3 flex items-center justify-center shadow-sm hover:scale-105 transition
+        							w-[calc(35%-1rem)] min-[450px]:w-[calc(25%-1rem)] `}>
+											<item.icon
+												className="w-9 h-9 sm:w-12 sm:h-12 mx-auto"
+												aria-label={item.name}
+											/>
+										</div>
+									);
+								})}
 							</div>
 						</div>
 						<div className="w-full  md:w-[283px] bg-primary relative order-1 md:order-2 p-4  antialiased flex items-center justify-center rounded-xl overflow-hidden">
