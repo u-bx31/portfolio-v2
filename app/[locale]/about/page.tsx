@@ -4,6 +4,7 @@ import { ArrowDoodles } from "@/public/svgs";
 import { stackData } from "@/lib/stack";
 import { ExternalLinkIcon } from "lucide-react";
 import Link from "next/link";
+import { BackgroundBeams } from "@/components/ui/background-beams";
 
 export default function About() {
 	return (
@@ -46,23 +47,29 @@ export default function About() {
 			<div className="max-w-6xl mt-8 w-full h-full flex flex-col lg:flex-row gap-8 items-stretch px-0 sm:px-10 lg:px-2">
 				<div className="w-full flex flex-col gap-8">
 					{/* Stack Section*/}
-					<div className="flex flex-row justify-between gap-8">
-						<div className="p-9 bg-secondary rounded-xl max-w-[501px]">
-							<div className="flex flex-wrap gap-4 justify-center">
+					<div className="flex flex-col md:flex-row justify-between gap-8">
+						<div className="px-6  relative order-2 md:order-1 bg-secondary rounded-xl w-full md:max-w-[501px] overflow-hidden">
+							<div className="bg-background -translate-x-6 mt-6 px-10 py-5 w-fit left-10 rounded-r-xl">
+								<h3 className="font-bold text-lg mb-4">Stack</h3>
+							</div>
+							<div className="grid grid-cols-3 min-[389px]:grid-cols-4 md:grid-cols-5 translate-x-10 md:translate-x-15 -translate-y-9 -rotate-6 px-3 gap-3 justify-stretch items-center ">
 								{stackData.map((item) => (
 									<div
 										key={item.name}
-										className="bg-white/70 flex items-center rounded-lg p-2.5">
+										className="bg-[#FAF0D5] !w-full  rounded-lg p-2.5 shadow-lg">
 										<item.icon
-											className="w-12 h-12"
+											className="w-9 h-9 sm:w-12 sm:h-12 mx-auto"
 											aria-label={item.name}
 										/>
 									</div>
 								))}
 							</div>
 						</div>
-						<div className="w-[283px] p-4 bg-secondary flex items-center justify-center rounded-xl">
-							<h2 className="text-3xl font-black mb-4">Stack</h2>
+						<div className="w-full  md:w-[283px] bg-primary relative order-1 md:order-2 p-4  antialiased flex items-center justify-center rounded-xl overflow-hidden">
+							<div className="relative z-10 text-base min-[364px]:!text-xl md:text-2xl  bg-background/60 px-1 py-3 rounded-lg text-text  text-center font-sans font-bold">
+								{`< Fueled by coffee and 'clean' code />`}
+							</div>
+							<BackgroundBeams />
 						</div>
 					</div>
 
