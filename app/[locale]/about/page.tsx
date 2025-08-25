@@ -5,6 +5,7 @@ import { stackData } from "@/lib/stack";
 import { ExternalLinkIcon } from "lucide-react";
 import Link from "next/link";
 import { BackgroundBeams } from "@/components/ui/background-beams";
+import { WorkExperienceData } from "@/lib/content";
 
 export default function About() {
 	return (
@@ -28,7 +29,7 @@ export default function About() {
 					<h1 className="bg-primary py-8 px-4 md:py-14 md:px-48 text-2xl lg:text-3xl font-bold mb-4 text-center rounded-2xl">
 						Oussama Labchri
 					</h1>
-					<div className="bg-black text-white font-light rounded-xl px-6 py-8 md:py-12 text-base md:text-lg lg:text-xl leading-relaxed">
+					<div className="bg-[#252421] text-white font-light rounded-xl px-6 py-8 md:py-12 text-base md:text-lg lg:text-xl leading-relaxed">
 						<p className="text-justify">
 							👋 Hi! I'm Oussama Labchri. I am a junior web developer
 							with a passion and interest in building fully responsive
@@ -77,37 +78,42 @@ export default function About() {
 					</div>
 
 					{/* Work Experience section */}
-					<div className="bg-gray-200 p-5 rounded-xl">
-						<h3 className="font-bold text-lg mb-4">
-							Work Experience
-						</h3>
-						<div className="mb-4">
-							<p className="text-base font-bold">
-								Jun 2023 - Oct 2023, Tetouan
-							</p>
-							<p className="text-base font-semibold">
-								Win Web - Internship • Full-stack Developer
-							</p>
-							<p className="text-base mt-1">
-								Built a full-stack project management app with
-								Next.js, Laravel, Sanctum auth, and responsive UI
-								using Figma and Shadcn. Optimized PostgreSQL databases
-								for large-scale data and user interactions.
-							</p>
+					<div className="bg-gray-200 px-5 pb-5 rounded-xl">
+						<div className="bg-background px-6 sm:px-12 py-5 w-fit left-10 rounded-b-xl mx-auto mb-7">
+							<h3 className="font-bold text-lg ">Work experience</h3>
 						</div>
-						<div>
-							<p className="text-base font-bold">
-								May 2022 - Jun 2022, Tetouan
-							</p>
-							<p className="text-base font-semibold">
-								DiaaLand - Internship • Front-end Developer
-							</p>
-							<p className="text-base mt-1">
-								Developed responsive recruiting platforms using HTML,
-								CSS, JS, jQuery, and Bootstrap. Designed UI/UX with
-								features like live search, filtering, and form
-								validation.
-							</p>
+
+						{/* content */}
+						<div className="mb-4">
+							{WorkExperienceData.map((item, i) => {
+								return (
+									<div
+										key={i}
+										className={`mb-6 ${
+											i === WorkExperienceData.length - 1
+												? "mb-0"
+												: ""
+										}`}>
+										<div className="flex flex-col md:flex-row md:justify-between md:items-center">
+											<div className="flex flex-col">
+												<h3 className="text-lg font-bold">
+													{item.company}
+												</h3>
+												<p className="text-base font-semibold">
+													{item.position}
+												</p>
+											</div>
+											<p className="text-base font-semibold">
+												{item.duration}, {item.location}
+											</p>
+										</div>
+
+										<p className="text-base mt-1">
+											{item.description}
+										</p>
+									</div>
+								);
+							})}
 						</div>
 					</div>
 				</div>
