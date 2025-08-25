@@ -13,3 +13,4 @@ export { default as TailwindIcon} from './icon-tailwind.svg';
 export { default as TypeScriptIcon} from './icon-typescript.svg';
 export { default as BootstrapIcon} from './icon-bootstrap.svg';
 export { default as SqlIcon} from './icon-sql.svg';
+export { default as IllustratorProject} from './illustrator-project.svg';

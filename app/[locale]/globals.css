@@ -185,10 +185,10 @@
   display: none;
 }
 .text-outline {
-  -webkit-text-stroke: 2px rgb(255, 255, 255); /* outline thickness + color */
+  -webkit-text-stroke: 2px rgb(0, 0, 0); /* outline thickness + color */
   color: transparent; /* if you only want the stroke */
 }
 .text-outline:hover {
-	-webkit-text-stroke: 2.5px rgb(255, 255, 255); /* outline thickness + color on hover */
+	-webkit-text-stroke: 2.3px rgb(0, 0, 0); /* outline thickness + color on hover */
 	color: transparent; /* if you only want the stroke on hover */
 }

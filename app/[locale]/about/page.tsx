@@ -1,8 +1,12 @@
 "use client";
 import Image from "next/image";
-import { ArrowDoodles } from "@/public/svgs";
+import { ArrowDoodles, IllustratorProject } from "@/public/svgs";
 import { stackData } from "@/lib/stack";
-import { ExternalLinkIcon } from "lucide-react";
+import {
+	ExternalLinkIcon,
+	GithubIcon,
+	LucideLinkedin,
+} from "lucide-react";
 import Link from "next/link";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { WorkExperienceData } from "@/lib/content";
@@ -11,7 +15,7 @@ export default function About() {
 	return (
 		<div className="min-h-screen flex flex-col items-center justify-center py-8 px-4">
 			{/* Header Section */}
-			<div className="max-w-6xl w-full h-full flex flex-col lg:flex-row gap-8 items-center px-0 sm:px-10 lg:px-2">
+			<div className="max-w-6xl w-full h-full flex flex-col lg:flex-row gap-6 md:gap-8 items-center px-0 sm:px-10 lg:px-2">
 				{/* Profile Image */}
 				<div className="bg-gradient-to-t from-secondary via-secondary/80 to-background relative w-full h-[280px]  lg:h-[480px] rounded-xl flex justify-center items-center overflow-hidden px-7">
 					<ArrowDoodles className=" absolute left-1/2 top-1/2 -translate-x-[51%] -translate-y-3/5 scale-60  md:scale-90 lg:scale-50 stroke-accent  stroke-5 fill-white" />
@@ -45,10 +49,10 @@ export default function About() {
 			</div>
 
 			{/* bottom Section */}
-			<div className="max-w-6xl mt-8 w-full h-full flex flex-col lg:flex-row gap-8 items-stretch px-0 sm:px-10 lg:px-2">
-				<div className="w-full flex flex-col gap-8">
+			<div className="max-w-6xl mt-8 w-full h-full flex flex-col lg:flex-row gap-6 md:gap-8 items-stretch px-0 sm:px-10 lg:px-2">
+				<div className="w-full flex flex-col gap-6 md:gap-8">
 					{/* Stack Section*/}
-					<div className="flex flex-col md:flex-row justify-between gap-8">
+					<div className="flex flex-col md:flex-row justify-between gap-6 md:gap-8">
 						<div className="px-6 h-[390px] min-[450px]:h-[320px] sm:h-[360px] relative order-2 md:order-1 bg-secondary rounded-xl w-full lg:max-w-[501px] overflow-hidden">
 							<div className="bg-background -translate-x-6 translate-y-6 px-12 py-5 w-fit left-10 rounded-r-xl">
 								<h3 className="font-bold text-lg mb-4">Stack</h3>
@@ -69,11 +73,13 @@ export default function About() {
 								})}
 							</div>
 						</div>
-						<div className="w-full  md:w-[283px] bg-primary relative order-1 md:order-2 p-4  antialiased flex items-center justify-center rounded-xl overflow-hidden">
-							<div className="relative z-10 text-base min-[364px]:!text-xl md:text-2xl  bg-background/60 px-1 py-3 rounded-lg text-text  text-center font-sans font-bold">
-								{`< Fueled by coffee and 'clean' code />`}
+						<div className="w-full  md:w-[283px] relative order-1 md:order-2 gap-6 md:gap-8  antialiased flex flex-row md:flex-col items-center justify-center rounded-xl overflow-hidden">
+							<div className="flex flex-1 w-full items-center bg-secondary rounded-xl p-6 ">
+								<LucideLinkedin className="w-11 h-11 md:w-25 md:h-25 text-text mx-auto stroke-1" />
 							</div>
-							<BackgroundBeams />
+							<div className="flex flex-1 w-full items-center bg-secondary rounded-xl p-6 ">
+								<GithubIcon className="w-11 h-11 md:w-25 md:h-25 text-text mx-auto stroke-1 " />
+							</div>
 						</div>
 					</div>
 
@@ -119,10 +125,59 @@ export default function About() {
 				</div>
 				<Link
 					href={"/project"}
-					className="max-w-[318px] w-full relative p-20 bg-accent rounded-xl flex items-center group justify-center text-outline transition-all duration-150 ease-in-out ">
-					<ExternalLinkIcon className=" absolute top-3 right-3 z-10 w-5 h-5 text-white/60 group-hover:text-white/80 hover:text-white" />
+					className="lg:max-w-[318px] min-h-[400px] w-full p-20 flex items-center justify-center  relative bg-accent hover:bg-accent/90 rounded-xl group text-outline transition-all duration-200 ease-in-out overflow-hidden">
+					<ExternalLinkIcon className="absolute top-3 right-3 z-10 w-6 h-6 text-white/60 group-hover:text-white/80 hover:text-white" />
 
-					<h1 className="text-6xl font-bold ">Projects</h1>
+					<h1 className="text-4xl md:text-6xl font-bold bg-white/80 group-hover:bg-white/90 transition-all duration-200 ease-in-out p-4 rounded-xl z-10">
+						Projects
+					</h1>
+					{/* projects Mockup */}
+					<>
+						<Image
+							src="/images/img_connectCrew.png"
+							className="drop-shadow-lg drop-shadow-white/60  absolute top-0 left-0 object-cover -rotate-15"
+							height={200}
+							width={200}
+							alt="project1"
+						/>
+						<Image
+							src="/images/img_ipTracker.png"
+							className="drop-shadow-lg drop-shadow-white/60  absolute top-20 left-50 object-cover -rotate-15"
+							height={200}
+							width={200}
+							alt="project1"
+						/>
+						<Image
+							src="/images/img_rps.png"
+							className="drop-shadow-lg drop-shadow-white/60  absolute top-0 left-110 sm:left-130  object-cover -rotate-15"
+							height={200}
+							width={200}
+							alt="project1"
+						/>
+						<Image
+							src="/images/img_tipCalc.png"
+							className="drop-shadow-lg drop-shadow-white/60  absolute top-60 left-20  sm:left-30 lg:left-10  object-cover -rotate-15"
+							height={200}
+							width={200}
+							alt="project1"
+						/>
+						<Image
+							src="/images/Landing_page1.png"
+							className="drop-shadow-lg drop-shadow-white/60  absolute top-60 left-100 sm:left-120  object-cover -rotate-15"
+							height={200}
+							width={200}
+							alt="project1"
+						/>
+						<Image
+							src="/images/Landing_page2.png"
+							className="drop-shadow-lg drop-shadow-white/60  absolute top-30 left-190 lg:top-120 lg:left-40  object-cover -rotate-15"
+							height={200}
+							width={200}
+							alt="project1"
+						/>
+					</>
+
+					<IllustratorProject className="absolute bottom-0 -left-0 !w-[240px] !h-[290px] " />
 				</Link>
 			</div>
 		</div>
