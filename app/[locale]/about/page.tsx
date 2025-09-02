@@ -75,34 +75,39 @@ export default function About() {
 								})}
 							</div>
 						</div>
-						<div className="w-full md:w-[400px]  lg:w-[283px] relative order-1 md:order-2 gap-4 md:gap-6  antialiased flex flex-row md:flex-col items-center justify-center rounded-xl overflow-hidden">
-							<div className="relative w-full h-[120px] md:h-full bg-[#5A4634] rounded-2xl flex items-center justify-center overflow-hidden ">
-								<GithubIcon className="absolute -bottom-5 z-10 w-full h-[130px] md:h-[190px]   stroke-white/63 stroke-1 fill-[#5A4634]" />
-								<span className="absolute z-0 inset-0 text-[15vw] sm:text-[13vw] md:text-[9vw] lg:text-[6vw] xl:text-[5.5rem] flex items-center justify-center text-outline-white font-black leading-[10px] select-none">
+
+						
+						<div className="w-full md:w-[400px]  lg:w-[283px] relative order-1 md:order-2 gap-4 md:gap-6  antialiased flex flex-row md:flex-col items-center justify-center">
+							
+							<Link href={`${process.env.NEXT_PUBLIC_GITHUB_LINK}`} className="relative w-full h-[120px] md:h-full bg-[#5A4634] rounded-2xl flex items-center justify-center overflow-hidden group transition-all duration-150 ease-in-out hover:bg-[#5A4634]/96">
+								<GithubIcon className="absolute -bottom-5 z-10 w-full h-[130px] md:h-[190px]   stroke-white/63 stroke-1 fill-[#5A4634]/85 group-hover:fill-[#5A4634]/96" />
+								<span className="absolute z-0 inset-0 text-[15vw] sm:text-[13vw] md:text-[9vw] lg:text-[6vw] xl:text-[5.5rem] flex items-center justify-center text-outline-white font-black leading-[10px] select-none transform group-hover:scale-96 transition-all duration-150 ease-in-out">
 									Github
 								</span>
 
 								{/* Foreground text */}
-								<span className="relative z-20 text-2xl font-bold text-black">
+								<span className="relative z-20 text-2xl font-bold text-text group-hover:scale-104 transition-all duration-150 ease-in-out">
 									Github
 								</span>
 
 								{/* Arrow */}
-								<ArrowRight className="absolute top-0 right-0 -rotate-45 w-11 h-11 text-white hover:text-black/80" />
-							</div>
-							<div className="relative w-full h-[120px] md:!h-[140px] bg-[#ecce83] rounded-2xl flex items-center justify-center overflow-hidden ">
-								<span className="absolute inset-0 text-[15vw] sm:text-[13vw] md:text-[9vw] lg:text-[6vw] xl:text-[5.5rem] flex items-center justify-center text-outline-white font-black leading-[10px] select-none">
+								<ArrowRight className="absolute top-0 right-0 -rotate-45 group-hover:-rotate-0 w-11 h-11 text-white group-hover:text-black/80 transition-all duration-200 ease-in-out" />
+							</Link>
+
+
+							<Link href={'/contact'} className="relative w-full h-[120px] md:!h-[140px] bg-secondary rounded-2xl flex items-center justify-center overflow-hidden group transition-all duration-150 ease-in-out  hover:bg-secondary/96">
+								<span className="absolute inset-0 z-10 text-[15vw] sm:text-[13vw] md:text-[9vw] lg:text-[6vw] xl:text-[5.5rem] flex items-center justify-center text-outline-white font-black leading-[10px] select-none transform group-hover:scale-96 transition-all duration-150 ease-in-out">
 									Contact
 								</span>
-
+								
 								{/* Foreground text */}
-								<span className="relative text-2xl font-bold text-black">
+								<span className="relative text-2xl z-20 font-bold text-text group-hover:scale-104 transition-all duration-150 ease-in-out">
 									Contact
 								</span>
 
 								{/* Arrow */}
-								<ArrowRight className="absolute top-0 right-0 -rotate-45 w-11 h-11 text-white hover:text-black/80" />
-							</div>
+								<ArrowRight className="absolute top-0 right-0 -rotate-45 group-hover:-rotate-0 w-11 h-11 text-white group-hover:text-black/80 transition-all duration-200 ease-in-out" />
+							</Link>
 						</div>
 					</div>
 
@@ -146,10 +151,12 @@ export default function About() {
 						</div>
 					</div>
 				</div>
+
+
 				<Link
 					href={"/project"}
 					className="lg:max-w-[318px] min-h-[400px] w-full p-20 flex items-center justify-center  relative bg-accent hover:bg-accent/90 rounded-xl group text-outline transition-all duration-200 ease-in-out overflow-hidden">
-					<ExternalLinkIcon className="absolute top-3 right-3 z-10 w-6 h-6 text-white/60 group-hover:text-white/80 hover:text-white" />
+					<ArrowRight className="absolute top-3 right-3 z-10 w-11 h-11 -rotate-45 group-hover:-rotate-0 stroke-white group-hover:stroke-black/80 transition-all duration-200 ease-in-out" />
 
 					<h1 className="text-4xl md:text-6xl font-bold bg-white/80 group-hover:bg-white/90 transition-all duration-200 ease-in-out p-4 rounded-xl z-10">
 						Projects
