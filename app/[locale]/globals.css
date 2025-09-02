@@ -192,3 +192,12 @@
 	-webkit-text-stroke: 2.3px rgb(0, 0, 0); /* outline thickness + color on hover */
 	color: transparent; /* if you only want the stroke on hover */
 }
+
+.text-outline-white {
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.633); /* outline thickness + color */
+  color: transparent; /* if you only want the stroke */
+}
+.text-outline-white:hover {
+	-webkit-text-stroke: 1.3px rgba(255, 255, 255, 0.73); /* outline thickness + color on hover */
+	color: transparent; /* if you only want the stroke on hover */
+}

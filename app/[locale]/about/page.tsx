@@ -3,6 +3,7 @@ import Image from "next/image";
 import { ArrowDoodles, IllustratorProject } from "@/public/svgs";
 import { stackData } from "@/lib/stack";
 import {
+	ArrowRight,
 	ExternalLinkIcon,
 	GithubIcon,
 	LucideLinkedin,
@@ -13,9 +14,9 @@ import { WorkExperienceData } from "@/lib/content";
 
 export default function About() {
 	return (
-		<div className="min-h-screen flex flex-col items-center justify-center py-8 px-4">
+		<div className="min-h-screen flex flex-col items-center justify-center py-8 px-4 gap-4 md:gap-6">
 			{/* Header Section */}
-			<div className="max-w-6xl w-full h-full flex flex-col lg:flex-row gap-6 md:gap-8 items-center px-0 sm:px-10 lg:px-2">
+			<div className="max-w-6xl w-full h-full flex flex-col lg:flex-row gap-4 md:gap-6 items-center px-0 sm:px-10 lg:px-2">
 				{/* Profile Image */}
 				<div className="bg-gradient-to-t from-secondary via-secondary/80 to-background relative w-full h-[280px]  lg:h-[480px] rounded-xl flex justify-center items-center overflow-hidden px-7">
 					<ArrowDoodles className=" absolute left-1/2 top-1/2 -translate-x-[51%] -translate-y-3/5 scale-60  md:scale-90 lg:scale-50 stroke-accent  stroke-5 fill-white" />
@@ -29,8 +30,8 @@ export default function About() {
 				</div>
 
 				{/* About */}
-				<div className="flex flex-col gap-3">
-					<h1 className="bg-primary py-8 px-4 md:py-14 md:px-48 text-2xl lg:text-3xl font-bold mb-4 text-center rounded-2xl">
+				<div className="flex flex-col gap-4 md:gap-6">
+					<h1 className="bg-primary py-8 px-4 md:py-14 md:px-48 text-2xl lg:text-3xl font-bold  text-center rounded-2xl">
 						Oussama Labchri
 					</h1>
 					<div className="bg-[#2C2C2C] text-white font-light rounded-xl px-6 py-8 md:py-12 text-base md:text-lg lg:text-xl leading-relaxed">
@@ -49,14 +50,15 @@ export default function About() {
 			</div>
 
 			{/* bottom Section */}
-			<div className="max-w-6xl mt-8 w-full h-full flex flex-col lg:flex-row gap-6 md:gap-8 items-stretch px-0 sm:px-10 lg:px-2">
-				<div className="w-full flex flex-col gap-6 md:gap-8">
+			<div className="max-w-6xl  w-full h-full flex flex-col lg:flex-row gap-4 md:gap-6 items-stretch px-0 sm:px-10 lg:px-2">
+				<div className="w-full flex flex-col gap-4 md:gap-6">
 					{/* Stack Section*/}
-					<div className="flex flex-col md:flex-row justify-between gap-6 md:gap-8">
-						<div className="px-6 h-[390px] min-[450px]:h-[320px] sm:h-[300px] relative order-2 md:order-1 bg-secondary rounded-xl w-full lg:max-w-[501px] overflow-hidden">
+					<div className="flex flex-col md:flex-row justify-between gap-4 md:gap-6">
+						<div className="px-6 h-[390px] min-[450px]:h-[260px] sm:h-[300px] relative order-2 md:order-1 bg-[#E4D3A1] rounded-xl w-full lg:max-w-[501px] overflow-hidden">
 							<div className="bg-background -translate-x-6 translate-y-6 px-12 py-5 w-fit left-10 rounded-r-xl">
 								<h3 className="font-bold text-lg mb-4">Stack</h3>
 							</div>
+
 							<div className="flex flex-wrap flex-1 translate-x-15 md:translate-x-20 -translate-y-6 -rotate-6 px-3 gap-3  justify-center ">
 								{stackData.map((item, i) => {
 									return (
@@ -73,18 +75,39 @@ export default function About() {
 								})}
 							</div>
 						</div>
-						<div className="w-full  md:w-[283px] relative order-1 md:order-2 gap-6 md:gap-8  antialiased flex flex-row md:flex-col items-center justify-center rounded-xl overflow-hidden">
-							<div className="flex flex-1 w-full items-center bg-secondary rounded-xl p-4 ">
-								<LucideLinkedin className="w-11 h-11 md:w-25 md:h-25 text-text mx-auto stroke-1" />
+						<div className="w-full md:w-[400px]  lg:w-[283px] relative order-1 md:order-2 gap-4 md:gap-6  antialiased flex flex-row md:flex-col items-center justify-center rounded-xl overflow-hidden">
+							<div className="relative w-full h-[120px] md:h-full bg-[#5A4634] rounded-2xl flex items-center justify-center overflow-hidden ">
+								<GithubIcon className="absolute -bottom-5 z-10 w-full h-[130px] md:h-[190px]   stroke-white/63 stroke-1 fill-[#5A4634]" />
+								<span className="absolute z-0 inset-0 text-[15vw] sm:text-[13vw] md:text-[9vw] lg:text-[6vw] xl:text-[5.5rem] flex items-center justify-center text-outline-white font-black leading-[10px] select-none">
+									Github
+								</span>
+
+								{/* Foreground text */}
+								<span className="relative z-20 text-2xl font-bold text-black">
+									Github
+								</span>
+
+								{/* Arrow */}
+								<ArrowRight className="absolute top-0 right-0 -rotate-45 w-11 h-11 text-white hover:text-black/80" />
 							</div>
-							<div className="flex flex-1 w-full items-center bg-secondary rounded-xl p-4 ">
-								<GithubIcon className="w-11 h-11 md:w-25 md:h-25 text-text mx-auto stroke-1 " />
+							<div className="relative w-full h-[120px] md:!h-[140px] bg-[#ecce83] rounded-2xl flex items-center justify-center overflow-hidden ">
+								<span className="absolute inset-0 text-[15vw] sm:text-[13vw] md:text-[9vw] lg:text-[6vw] xl:text-[5.5rem] flex items-center justify-center text-outline-white font-black leading-[10px] select-none">
+									Contact
+								</span>
+
+								{/* Foreground text */}
+								<span className="relative text-2xl font-bold text-black">
+									Contact
+								</span>
+
+								{/* Arrow */}
+								<ArrowRight className="absolute top-0 right-0 -rotate-45 w-11 h-11 text-white hover:text-black/80" />
 							</div>
 						</div>
 					</div>
 
 					{/* Work Experience section */}
-					<div className="bg-gray-200 px-5 pb-5 rounded-xl">
+					<div className="bg-[#D9D5C9] dark:bg-gray-500 px-5 pb-5 rounded-xl">
 						<div className="bg-background px-6 sm:px-12 py-5 w-fit left-10 rounded-b-xl mx-auto mb-7">
 							<h3 className="font-bold text-lg ">Work experience</h3>
 						</div>
