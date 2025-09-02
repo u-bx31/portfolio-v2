@@ -33,7 +33,7 @@ export default function About() {
 					<h1 className="bg-primary py-8 px-4 md:py-14 md:px-48 text-2xl lg:text-3xl font-bold mb-4 text-center rounded-2xl">
 						Oussama Labchri
 					</h1>
-					<div className="bg-[#252421] text-white font-light rounded-xl px-6 py-8 md:py-12 text-base md:text-lg lg:text-xl leading-relaxed">
+					<div className="bg-[#2C2C2C] text-white font-light rounded-xl px-6 py-8 md:py-12 text-base md:text-lg lg:text-xl leading-relaxed">
 						<p className="text-justify">
 							👋 Hi! I'm Oussama Labchri. I am a junior web developer
 							with a passion and interest in building fully responsive
@@ -53,7 +53,7 @@ export default function About() {
 				<div className="w-full flex flex-col gap-6 md:gap-8">
 					{/* Stack Section*/}
 					<div className="flex flex-col md:flex-row justify-between gap-6 md:gap-8">
-						<div className="px-6 h-[390px] min-[450px]:h-[320px] sm:h-[360px] relative order-2 md:order-1 bg-secondary rounded-xl w-full lg:max-w-[501px] overflow-hidden">
+						<div className="px-6 h-[390px] min-[450px]:h-[320px] sm:h-[300px] relative order-2 md:order-1 bg-secondary rounded-xl w-full lg:max-w-[501px] overflow-hidden">
 							<div className="bg-background -translate-x-6 translate-y-6 px-12 py-5 w-fit left-10 rounded-r-xl">
 								<h3 className="font-bold text-lg mb-4">Stack</h3>
 							</div>
@@ -63,7 +63,7 @@ export default function About() {
 										<div
 											key={item.name}
 											className={`bg-[#FAF0D5] rounded-xl p-3 flex items-center justify-center shadow-sm hover:scale-105 transition
-        							w-[calc(35%-1rem)] min-[450px]:w-[calc(25%-1rem)] `}>
+        							w-[calc(35%-1rem)] min-[450px]:w-[calc(20%-1rem)] `}>
 											<item.icon
 												className="w-9 h-9 sm:w-12 sm:h-12 mx-auto"
 												aria-label={item.name}
@@ -74,10 +74,10 @@ export default function About() {
 							</div>
 						</div>
 						<div className="w-full  md:w-[283px] relative order-1 md:order-2 gap-6 md:gap-8  antialiased flex flex-row md:flex-col items-center justify-center rounded-xl overflow-hidden">
-							<div className="flex flex-1 w-full items-center bg-secondary rounded-xl p-6 ">
+							<div className="flex flex-1 w-full items-center bg-secondary rounded-xl p-4 ">
 								<LucideLinkedin className="w-11 h-11 md:w-25 md:h-25 text-text mx-auto stroke-1" />
 							</div>
-							<div className="flex flex-1 w-full items-center bg-secondary rounded-xl p-6 ">
+							<div className="flex flex-1 w-full items-center bg-secondary rounded-xl p-4 ">
 								<GithubIcon className="w-11 h-11 md:w-25 md:h-25 text-text mx-auto stroke-1 " />
 							</div>
 						</div>
